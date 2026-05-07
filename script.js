@@ -1,32 +1,63 @@
-function checkEmail() {
+body {
+  margin: 0;
+  font-family: Arial;
+  background: white;
 
-  let email = document.getElementById("email").value;
-  let result = document.getElementById("result");
+  /* مهم جداً: توسيط كامل */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/* العنوان في النص */
+h1 {
+  margin-top: 50px;
+  font-size: 24px;
+  text-align: center;
+  color: #222;
+}
 
-  if (email === "") {
-    result.innerHTML = "اكتب ايميل";
-    result.style.color = "red";
-    return;
-  }
+/* الصندوق في الوسط */
+.box {
+  margin-top: 60px;
+  background: white;
+  width: 350px;
+  padding: 30px;
+  border-radius: 15px;
 
-  if (!pattern.test(email)) {
-    result.innerHTML = "⚠ ايميل غير صحيح";
-    result.style.color = "red";
-    return;
-  }
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  text-align: center;
+}
 
-  let domain = email.split("@")[1];
+/* input */
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+}
 
-  let fake = ["tempmail.com", "mailinator.com", "yopmail.com"];
+/* زر */
+button {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-  if (fake.some(d => domain.includes(d))) {
-    result.innerHTML = "⚠ ايميل وهمي";
-    result.style.color = "red";
-  }
-  else {
-    result.innerHTML = "✔ ايميل آمن";
-    result.style.color = "green";
-  }
+button:hover {
+  background: #333;
+}
+
+/* النتيجة */
+#result {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
 }
