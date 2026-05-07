@@ -1,37 +1,20 @@
-function isSuspicious(email) {
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(email)) {
-        return true;
-    }
-
-    let score = 0;
-
-    const parts = email.split("@");
-    const name = parts[0];
-
-    if (name.length > 15) score++;
-    if (/[0-9]{4,}/.test(name)) score++;
-    if (/[^a-zA-Z0-9._%+-@]/.test(email)) score++;
-
-    return score >= 2;
-}
-
 function checkEmail() {
+  let email = document.getElementById("emailInput").value;
+  let result = document.getElementById("result");
 
-    const email = document.getElementById("email").value;
+  // فحص بسيط (شكل ايميل فقط)
+  let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const result = document.getElementById("result");
-
-    if (isSuspicious(email)) {
-
-        result.inner.HTML = "⚠️ الإيميل خطير";
-        result.style.color = "red";
-
-    } else {
-
-        result.innerHTML = "✅ الإيميل آمن";
-        result.style.color = "green";
-    }
+  if (email === "") {
+    result.innerHTML = "الرجاء إدخال ايميل";
+    result.style.color = "red";
+  }
+  else if (pattern.test(email)) {
+    result.innerHTML = "✔ الايميل يبدو آمن";
+    result.style.color = "green";
+  }
+  else {
+    result.innerHTML = "⚠ الايميل غير صحيح أو مشبوه";
+    result.style.color = "red";
+  }
 }
