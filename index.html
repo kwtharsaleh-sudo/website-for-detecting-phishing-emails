@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>فحص الإيميلات</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>فحص رسائل الإيميل</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 120px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #000;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 18px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #333;
+        }
+    </style>
 </head>
 
 <body>
 
-  <h1>موقع لكشف الايميلات المضلله</h1>
+    <div class="container">
+        <h1>مرحباً بك</h1>
+        <p>موقع إلكتروني لكشف رسائل الإيميل المضللة</p>
 
-  <div class="box">
+        <a href="check.html">
+            <button class="btn">ابدأ الفحص</button>
+        </a>
+    </div>
 
-    <input type="text" id="email" placeholder="اكتب الإيميل هنا">
-
-    <button onclick="checkEmail()">فحص</button>
-
-    <h2 id="result"></h2>
-
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
