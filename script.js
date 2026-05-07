@@ -1,20 +1,32 @@
 function checkEmail() {
-  let email = document.getElementById("emailInput").value;
+
+  let email = document.getElementById("email").value;
   let result = document.getElementById("result");
 
-  // فحص بسيط (شكل ايميل فقط)
   let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (email === "") {
-    result.innerHTML = "الرجاء إدخال ايميل";
+    result.innerHTML = "اكتب ايميل";
     result.style.color = "red";
+    return;
   }
-  else if (pattern.test(email)) {
-    result.innerHTML = "✔ الايميل آمن";
-    result.style.color = "green";
+
+  if (!pattern.test(email)) {
+    result.innerHTML = "⚠ ايميل غير صحيح";
+    result.style.color = "red";
+    return;
+  }
+
+  let domain = email.split("@")[1];
+
+  let fake = ["tempmail.com", "mailinator.com", "yopmail.com"];
+
+  if (fake.some(d => domain.includes(d))) {
+    result.innerHTML = "⚠ ايميل وهمي";
+    result.style.color = "red";
   }
   else {
-    result.innerHTML = "⚠ الايميل غير صحيح أو مشبوه";
-    result.style.color = "red";
+    result.innerHTML = "✔ ايميل آمن";
+    result.style.color = "green";
   }
 }
