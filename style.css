@@ -1,66 +1,79 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #00c853, #b2ff59);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* الخلفية المتحركة */
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* الكرت */
+.container {
+  position: relative;
+  z-index: 2;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* أخضر مدرج ناعم */
-  background: linear-gradient(135deg, #0f9b0f, #00c853);
 }
 
-/* الصندوق الرئيسي */
-.container {
-  background: white;
+.card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
   padding: 40px;
-  border-radius: 18px;
-  text-align: center;
   width: 350px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* العنوان */
 h1 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #1b5e20;
+  font-size: 32px;
+  color: #0b3d0b;
 }
 
-/* صندوق الإيميل */
+p {
+  margin-bottom: 20px;
+}
+
+/* input */
 input {
   width: 100%;
   padding: 14px;
-  margin-bottom: 15px;
-  border: 2px solid #00c853;
   border-radius: 10px;
-  outline: none;
-
+  border: none;
+  margin-bottom: 15px;
   font-size: 16px;
 }
 
-/* الزر */
+/* زر */
 button {
   width: 100%;
   padding: 14px;
-  background: #0f9b0f;
-  color: white;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
-
+  background: #00c853;
+  color: white;
   font-size: 16px;
-  font-weight: bold;
+  cursor: pointer;
 }
 
 button:hover {
-  background: #0a7a0a;
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 /* النتيجة */
 #result {
-  margin-top: 18px;
-  font-size: 16px;
+  margin-top: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
