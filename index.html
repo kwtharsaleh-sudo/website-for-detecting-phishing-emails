@@ -2,20 +2,24 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>موقع لكشف الايميلات المضلله</title>
+  <title>Email Checker</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>موقع لكشف الايميلات المضلله</h1>
+<div class="box">
 
-    <input type="text" id="emailInput" placeholder="اكتب الايميل هنا">
-    <button onclick="checkEmail()">فحص الايميل</button>
+  <h1>فحص الإيميل</h1>
 
-    <p id="result"></p>
-  </div>
+  <input type="text" id="email" placeholder="example@mail.com">
 
-  <script src="script.js"></script>
+  <button onclick="checkEmail()">فحص</button>
+
+  <h2 id="result"></h2>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
