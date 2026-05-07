@@ -1,36 +1,20 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>Email Checker Pro</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+function checkEmail() {
+  let email = document.getElementById("emailInput").value;
+  let result = document.getElementById("result");
 
-<body>
+  // فحص بسيط (شكل ايميل فقط)
+  let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-<canvas id="bg"></canvas>
-
-<div class="container">
-
-  <div class="card">
-
-    <h2>مرحباً بك </h2>
-    <p2>نظام كشف الإيميلات</p2>
-
-    <input type="text" id="email" placeholder="اكتب الإيميل هنا">
-
-    <button onclick="checkEmail()">فحص الايميل</button>
-
-    <div id="result"></div>
-
-  </div>
-
-</div>
-
-<!-- الصوت -->
-<audio id="safeSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
-<audio id="dangerSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
-
-<script src="script.js"></script>
-</body>
-</html>
+  if (email === "") {
+    result.innerHTML = "الرجاء إدخال ايميل";
+    result.style.color = "red";
+  }
+  else if (pattern.test(email)) {
+    result.innerHTML = "✔ الايميل آمن";
+    result.style.color = "green";
+  }
+  else {
+    result.innerHTML = "⚠ الايميل غير صحيح أو مشبوه";
+    result.style.color = "red";
+  }
+}
