@@ -2,35 +2,20 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Email Checker Pro</title>
+  <title>موقع لكشف الايميلات المضلله</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<canvas id="bg"></canvas>
+  <div class="container">
+    <h1>موقع لكشف الايميلات المضلله</h1>
 
-<div class="container">
-
-  <div class="card">
-
-    <h1>مرحباً بك 👋</h1>
-    <p>نظام كشف الإيميلات</p>
-
-    <input type="text" id="email" placeholder="اكتب الإيميل هنا">
-
+    <input type="text" id="emailInput" placeholder="اكتب الايميل هنا">
     <button onclick="checkEmail()">فحص الايميل</button>
 
-    <div id="result"></div>
-
+    <p id="result"></p>
   </div>
 
-</div>
-
-<!-- الصوت -->
-<audio id="safeSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
-<audio id="dangerSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
