@@ -1,54 +1,38 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
+  background: linear-gradient(135deg, #00c853, #b2ff59);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  
-  background: linear-white
-}
-
-.container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
   text-align: center;
-  width: 300px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-h1 {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #2d572c;
+.box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  width: 300px;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #96c93d;
-  border-radius: 8px;
-  outline: none;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 button {
   width: 100%;
-  padding: 10px;
-  background: #00b09b;
+  padding: 12px;
+  margin-top: 10px;
+  background: green;
   color: white;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
 }
 
-button:hover {
-  background: #029c89;
-}
-
-#result {
-  margin-top: 15px;
-  font-weight: bold;
+h1 {
+  font-size: 22px;
 }
