@@ -26,7 +26,7 @@ function checkEmail() {
 
     if (isSuspicious(email)) {
 
-        result.innerHTML = "⚠️ الإيميل خطير";
+        result.inner.HTML = "⚠️ الإيميل خطير";
         result.style.color = "red";
 
     } else {
