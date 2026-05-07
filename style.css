@@ -1,38 +1,32 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg, #00c853, #b2ff59);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+function checkEmail() {
 
-.box {
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  width: 300px;
-}
+  let email = document.getElementById("email").value;
+  let result = document.getElementById("result");
 
-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  margin-top: 10px;
-}
+  let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  background: green;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+  if (email === "") {
+    result.innerHTML = "اكتب ايميل";
+    result.style.color = "red";
+    return;
+  }
 
-h1 {
-  font-size: 22px;
+  if (!pattern.test(email)) {
+    result.innerHTML = "⚠ ايميل غير صحيح";
+    result.style.color = "red";
+    return;
+  }
+
+  let domain = email.split("@")[1];
+
+  let fake = ["tempmail.com", "mailinator.com", "yopmail.com"];
+
+  if (fake.some(d => domain.includes(d))) {
+    result.innerHTML = "⚠ ايميل وهمي";
+    result.style.color = "red";
+  }
+  else {
+    result.innerHTML = "✔ ايميل آمن";
+    result.style.color = "green";
+  }
 }
