@@ -2,19 +2,35 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>موقع لكشف الايميلات المضلله</title>
+  <title>Email Checker Pro</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+  <!-- خلفية متحركة -->
+  <canvas id="particles"></canvas>
+
   <div class="container">
-    <h1>موقع لكشف الايميلات المضلله</h1>
 
-    <input type="text" id="emailInput" placeholder="اكتب الايميل هنا">
-    <button onclick="checkEmail()">فحص الايميل</button>
+    <div class="card">
 
-    <p id="result"></p>
+ <h2>مرحباً بك</h2>
+      <p>نظام لكشف الإيميلات المضللة</p>
+
+      <input type="text" id="email" placeholder="اكتب الإيميل هنا">
+
+      <button onclick="checkEmail()">فحص الإيميل</button>
+
+      <div id="result"></div>
+
+    </div>
+
   </div>
+
+  <!-- أصوات -->
+  <audio id="safeSound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+  <audio id="dangerSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
 
   <script src="script.js"></script>
 </body>
