@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>فحص الإيميل</title>
-
-<link rel="stylesheet" href="/style.css">
-
+  <meta charset="UTF-8">
+  <title>موقع لكشف الايميلات المضلله</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="box">
+  <div class="container">
+    <h1>موقع لكشف الايميلات المضلله</h1>
 
-    <h2>فحص الإيميل</h2>
+    <input type="text" id="emailInput" placeholder="اكتب الايميل هنا">
+    <button onclick="checkEmail()">فحص الايميل</button>
 
-    <input type="text" id="email" placeholder="example@mail.com">
+    <p id="result"></p>
+  </div>
 
-    <br><br>
-
-    <button onclick="checkEmail()">فحص</button>
-
-    <div id="result"></div>
-
-</div>
-
-<script src="/script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
