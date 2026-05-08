@@ -1,36 +1,46 @@
-function checkEmail(){
+function checkEmail() {
 
-    let text = document.getElementById("emailText").value.toLowerCase();
+    let email = document.getElementById("emailText").value.toLowerCase();
 
-    let fakeWords = [
-        "ربحت",
-        "اضغط هنا",
-        "كلمة المرور",
-        "تحويل أموال",
-        "bank",
-        "winner",
-        "free",
-        "click"
+    let realDomains = [
+        "gmail.com",
+        "yahoo.com",
+        "outlook.com",
+        "hotmail.com",
+        "icloud.com",
+        "proton.me",
+        "aol.com",
+        "live.com",
+        "msn.com",
+        "yandex.com"
     ];
-
-    let danger = false;
-
-    for(let i = 0; i < fakeWords.length; i++){
-
-        if(text.includes(fakeWords[i])){
-            danger = true;
-        }
-
-    }
 
     let result = document.getElementById("result");
 
-    if(danger){
+    let danger = false;
+
+    if (email.includes("@")) {
+
+        let domain = email.split("@")[1];
+
+        if (!realDomains.includes(domain)) {
+
+            danger = true;
+
+        }
+
+    } else {
+
+        danger = true;
+
+    }
+
+    if (danger) {
 
         result.innerHTML = "⚠️ الإيميل خطر";
         result.className = "danger";
 
-    }else{
+    } else {
 
         result.innerHTML = "✅ الإيميل آمن";
         result.className = "safe";
