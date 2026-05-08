@@ -39,7 +39,7 @@ function checkEmail() {
     // النتيجة الذكية
     if (riskCount === 0) {
 
-        result.innerHTML = "✅ الإيميل يبدو آمن";
+        result.innerHTML = "✅ الإيميل آمن";
         result.className = "safe";
 
     } else if (riskCount <= 2) {
