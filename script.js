@@ -1,49 +1,56 @@
 function checkEmail() {
 
-    let email = document.getElementById("emailText").value.toLowerCase();
-
-    let realDomains = [
-        "gmail.com",
-        "yahoo.com",
-        "outlook.com",
-        "hotmail.com",
-        "icloud.com",
-        "proton.me",
-        "aol.com",
-        "live.com",
-        "msn.com",
-        "yandex.com"
-    ];
-
+    let email = document.getElementById("emailText").value.toLowerCase().trim();
     let result = document.getElementById("result");
 
-    let danger = false;
+    // 1. فحص الشكل الأساسي
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (email.includes("@")) {
+    // 2. مؤشرات خطر (مش كلمات حتمية، إشارات فقط)
+    let riskySignals = [
+        "verify",
+        "password",
+        "bank",
+        "urgent",
+        "click",
+        "winner",
+        "free",
+        "login",
+        "account",
+        "update"
+    ];
 
-        let domain = email.split("@")[1];
+    let riskCount = 0;
 
-        if (!realDomains.includes(domain)) {
-
-            danger = true;
-
-        }
-
-    } else {
-
-        danger = true;
-
+    // فحص الشكل
+    if (!emailPattern.test(email)) {
+        result.innerHTML = "⚠️ الإيميل غير صحيح شكليًا";
+        result.className = "danger";
+        return;
     }
 
-    if (danger) {
+    // فحص المؤشرات
+    for (let i = 0; i < riskySignals.length; i++) {
+        if (email.includes(riskySignals[i])) {
+            riskCount++;
+        }
+    }
 
-        result.innerHTML = "⚠️ الإيميل خطر";
+    // النتيجة الذكية
+    if (riskCount === 0) {
+
+        result.innerHTML = "✅ الإيميل يبدو آمن";
+        result.className = "safe";
+
+    } else if (riskCount <= 2) {
+
+        result.innerHTML = "⚠️ الإيميل مشتبه فيه";
         result.className = "danger";
 
     } else {
 
-        result.innerHTML = "✅ الإيميل آمن";
-        result.className = "safe";
+        result.innerHTML = "🚨 الإيميل خطر جداً";
+        result.className = "danger";
 
     }
 
